@@ -12137,9 +12137,9 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答:</strong></p>
-<p>①样本一代表的是餐饮业，因为其生鲜、速冻食品的需求极高，熟食需求一般，而牛奶、清洁纸和杂货的需求极低；</p>
-<p>②样本二代表的是超市，因为其各种种类的出货量都很大，并种类上并没有明显的出货偏好；</p>
-<p>③样本三代表的是咖啡馆，因为其牛奶、熟食、速冻食品的需求量占比较高，生鲜、杂货、清洁纸需求量占比较小。</p>
+<p>①样本一代表的是餐饮业，因为其生鲜、速冻食品和熟食的消耗很大，需求超过75%的客户，而牛奶、清洁纸和杂货的需求低，均低于75%的客户；</p>
+<p>②样本二代表的是超市，因为除了清洁用纸消耗量低于75%的客户之外，其余种类消耗量均高于75%的客户，种类上并没有明显的出货偏好；</p>
+<p>③样本三代表的是咖啡馆，因为其牛奶和速冻食品的消耗量超过75%的客户，熟食的消耗量超过50%的客户，生鲜、杂货需求量均低于75%的客户，清洁用纸的消耗量低于50%的客户。</p>
 
 </div>
 </div>
@@ -12239,8 +12239,8 @@ The R^2 Score without Delicatessen is: 0.0692507841014
 <p>The R^2 Score without Frozen is: -1.502234141</p>
 <p>The R^2 Score without Detergents_Paper is: 0.787189639519</p>
 <p>The R^2 Score without Delicatessen is: 0.0692507841014</p>
-<p>③R^2结果由高到低排序依次为Grocery、Detergents_Paper、Milk、Delicatessen、Fresh、Frozen；</p>
-<p>Delicatessen、Fresh、Frozen的R^2结果为负数，不能拟合数据；Milk的R^2值接近0.4，能够在一定程度上拟合数据；Grocery和Detergents_Paper的R^2值均大于0.78，能够较好地拟合数据。</p>
+<p>R^2结果由高到低排序依次为Grocery、Detergents_Paper、Milk、Delicatessen、Fresh、Frozen；</p>
+<p>③Delicatessen、Fresh、Frozen的R^2结果为负数，不能拟合数据，对于区分用户的消费习惯来说不必要；Milk的R^2值接近0.4，能够在一定程度上拟合数据，对于区分用户的消费习惯来说必要；Grocery和Detergents_Paper的R^2值均大于0.78，能够较好地拟合数据，对于区分用户的消费习惯来说必要。</p>
 
 </div>
 </div>
@@ -13293,7 +13293,7 @@ The R^2 Score without Delicatessen is: 0.0692507841014
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答:</strong></p>
 <p>①65、66、75、128、154在多于一个特征下被看作是异常的数据点；</p>
-<p>②应该被从数据集中移除，因为它们在多于一个的数据集中属于异常。</p>
+<p>②应该被从数据集中移除，因为它们在多于一个的数据集中属于异常，这会使得降维分析的时候产生比较大的负面影响，而且我们数据量远大于这几个异常点，移除后损失的信息量较小。</p>
 
 </div>
 </div>
@@ -13709,7 +13709,7 @@ The R^2 Score without Delicatessen is: 0.0692507841014
 <p>使用高斯混合模型聚类算法的优点：对“类”的划分以概率形式表现，每一类的特征也可以用参数来表达；</p>
 <p>使用高斯混合模型聚类算法的缺点：执行效率不高，特别是分布数量很多并且数据量很少的时候。</p>
 <p>③</p>
-<p>我选用了高斯混合模型聚类算法，因为经过处理后的数据属于正态分布，并且数据量并不大，执行时间在可接受的范围内。</p>
+<p>我选用了高斯混合模型聚类算法。因为从聚集模式来看，经过处理后的数据并没有很明显的边界，从概率来划分比较合适，并且数据量并不大，使用高斯混合模型聚类的执行时间在可接受的范围内。</p>
 
 </div>
 </div>
@@ -13998,8 +13998,8 @@ When cluster = 9 , the silhouette_score is 0.2807052280078343
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答:</strong></p>
-<p>①Segment 0：超市；Grocery消耗量极大，其次是Milk、Detergents_Paper和Fresh，对于Frozen和Delicatessen的消耗相对较小，是超市的特征。</p>
-<p>②Segment 1：饭店；对Fresh的消耗量极大（占比超过一半），Milk和Frozen这两样食材也有一定的消耗，Grocery这类杂货消耗属于合理范围，对Detergents_Paper和Delicatessen的消耗占比很少，整体来说符合饭店每日经营的消耗。</p>
+<p>①Segment 0：超市；Grocery、Milk、Detergents_Paper消耗量都超过75%的客户，Delicatessen消耗量接近中位数，Frozen消耗量较小，仅超过25%的客户，是超市的特征。</p>
+<p>②Segment 1：饭店；对Fresh和Frozen的消耗大，均超过50%的客户，对Milk、Grocery、Detergents_Paper和Delicatessen的消耗较少，超过25%的客户，整体来说符合饭店每日经营的消耗特征。</p>
 
 </div>
 </div>
